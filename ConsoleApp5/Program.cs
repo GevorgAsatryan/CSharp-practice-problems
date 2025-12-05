@@ -134,7 +134,7 @@
 
             // Task 10 (Count occurrences)
 
-              int[] numbers = { 5, 1, 2, 2, 3, 5, 3, 3, 4, 4, 4, 4, 5, 5, 0, 0, 0, 0, 9, 10, 14, 15};
+int[] numbers = { 5, 1, 2, 2, 3, 5, 3, 3, 4, 4, 4, 4, 5, 5, 0, 0, 0, 0, 9, 10, 14, 15};
 int[] numbers2 = { };
 int count = 0;
 int a = 0;
@@ -172,7 +172,7 @@ for (int i = 0; i < numbers2.Length; i++)
     Console.WriteLine($"{numbers2[i]} appeared {count} times");
     count = 0;
                                                 
-            }
+}
             
             // Other tasks
             
@@ -244,5 +244,6 @@ for (int i = 0; i < numbers2.Length; i++)
 
     }
 }
+
 
 
