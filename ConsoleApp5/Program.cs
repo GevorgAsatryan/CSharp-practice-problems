@@ -134,40 +134,44 @@
 
             // Task 10 (Count occurrences)
 
-            int[] numbers = { 1, 2, 2, 3, 3, 3, 4, 4, 4, 4 };
-            int[] numbers2 = new int[numbers.Length];
-            int count = 0;
-            int a = 1;
-            numbers2[0] = numbers[0];
-            for (int i = 1; i < numbers.Length; i++)
-            {
-               if (numbers[i] != numbers[i - 1])
-               {
-                   numbers2[a] = numbers[i];
-                   a++;
-               }
-            }
-            
-            for(int i = 0; i < numbers2.Length; i++)
-            {
-               for(int j = 0; j < numbers.Length; j++)
-               {
-                   if (numbers2[i] == numbers[j])
-                   {
-                       count++;
-                   }
-               }
+              int[] numbers = { 5, 1, 2, 2, 3, 5, 3, 3, 4, 4, 4, 4, 5, 5, 0, 0, 0, 0, 9, 10, 14, 15};
+int[] numbers2 = { };
+int count = 0;
+int a = 0;
+bool contains = false;
+for (int i = 0; i < numbers.Length; i++)
+{
+    for (int j = 0; j < numbers2.Length; j++)
+    {
+        if (numbers[i] == numbers2[j])
+        {
+            contains = true;
+            break;
+        }
+    }
+    if (!contains)
+    {
+        Array.Resize(ref numbers2, numbers2.Length + 1);
+        numbers2[a] = numbers[i];
+        a++;
+    }
 
-               if (numbers2[i] != 0)
-               {
-                   Console.WriteLine($"{numbers2[i]} appeared {count} times");
-                   count = 0;
-               }
-               else
-               {
-                   count = 0;
-               }
+    contains = false;
+}
 
+for (int i = 0; i < numbers2.Length; i++)
+{
+    for (int j = 0; j < numbers.Length; j++)
+    {
+        if (numbers2[i] == numbers[j])     
+        {
+            count++;
+        }
+    }
+
+    Console.WriteLine($"{numbers2[i]} appeared {count} times");
+    count = 0;
+                                                
             }
             
             // Other tasks
@@ -240,4 +244,5 @@
 
     }
 }
+
 
